@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=c++14   CMakeFiles/oneteller.dir/project6.cpp.o CMakeFiles/oneteller.dir/Event.cpp.o CMakeFiles/oneteller.dir/EventBuilder.cpp.o CMakeFiles/oneteller.dir/Statistics.cpp.o CMakeFiles/oneteller.dir/Simulation.cpp.o  -o oneteller -rdynamic 
