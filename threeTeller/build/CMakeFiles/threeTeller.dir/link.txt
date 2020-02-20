@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=c++14   CMakeFiles/threeTeller.dir/project6.cpp.o CMakeFiles/threeTeller.dir/Simulation.cpp.o CMakeFiles/threeTeller.dir/Event.cpp.o CMakeFiles/threeTeller.dir/Statistics.cpp.o CMakeFiles/threeTeller.dir/PrecondViolatedExcep.cpp.o CMakeFiles/threeTeller.dir/EventBuilder.cpp.o  -o threeTeller -rdynamic 

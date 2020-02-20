@@ -11,7 +11,7 @@
  *  @author Timothy Henry
  *  @author Steve Holtz
  *
- *  @date 26 Sep 2018
+ *  @date 29 Mar 2016
  *
  *  @version 7.0 */
 
@@ -25,10 +25,10 @@
  *
  *  Specification for an object thrown on violation of precondition. */
 class PrecondViolatedExcep : public std::logic_error {
- public:
-  explicit PrecondViolatedExcep(const std::string& message = "");
+public:
+   explicit PrecondViolatedExcep(const std::string& message = "");
 
-  virtual ~PrecondViolatedExcep() noexcept = default; //throw();
+   virtual ~PrecondViolatedExcep() noexcept; //throw();
 };
 
 #endif

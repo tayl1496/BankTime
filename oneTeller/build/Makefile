@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/csugrads/tayl1496/cs1521/projects/project6/oneTeller/bu
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named oneteller
+# Target rules for targets named oneTeller
 
 # Build rule for target.
-oneteller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 oneteller
-.PHONY : oneteller
+oneTeller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oneTeller
+.PHONY : oneTeller
 
 # fast build rule for target.
-oneteller/fast:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/build
-.PHONY : oneteller/fast
+oneTeller/fast:
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/build
+.PHONY : oneTeller/fast
 
 Event.o: Event.cpp.o
 
@@ -129,7 +129,7 @@ Event.o: Event.cpp.o
 
 # target to build an object file
 Event.cpp.o:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Event.cpp.o
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Event.cpp.o
 .PHONY : Event.cpp.o
 
 Event.i: Event.cpp.i
@@ -138,7 +138,7 @@ Event.i: Event.cpp.i
 
 # target to preprocess a source file
 Event.cpp.i:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Event.cpp.i
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Event.cpp.i
 .PHONY : Event.cpp.i
 
 Event.s: Event.cpp.s
@@ -147,7 +147,7 @@ Event.s: Event.cpp.s
 
 # target to generate assembly for a file
 Event.cpp.s:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Event.cpp.s
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Event.cpp.s
 .PHONY : Event.cpp.s
 
 EventBuilder.o: EventBuilder.cpp.o
@@ -156,7 +156,7 @@ EventBuilder.o: EventBuilder.cpp.o
 
 # target to build an object file
 EventBuilder.cpp.o:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/EventBuilder.cpp.o
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/EventBuilder.cpp.o
 .PHONY : EventBuilder.cpp.o
 
 EventBuilder.i: EventBuilder.cpp.i
@@ -165,7 +165,7 @@ EventBuilder.i: EventBuilder.cpp.i
 
 # target to preprocess a source file
 EventBuilder.cpp.i:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/EventBuilder.cpp.i
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/EventBuilder.cpp.i
 .PHONY : EventBuilder.cpp.i
 
 EventBuilder.s: EventBuilder.cpp.s
@@ -174,8 +174,35 @@ EventBuilder.s: EventBuilder.cpp.s
 
 # target to generate assembly for a file
 EventBuilder.cpp.s:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/EventBuilder.cpp.s
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/EventBuilder.cpp.s
 .PHONY : EventBuilder.cpp.s
+
+PrecondViolatedExcep.o: PrecondViolatedExcep.cpp.o
+
+.PHONY : PrecondViolatedExcep.o
+
+# target to build an object file
+PrecondViolatedExcep.cpp.o:
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/PrecondViolatedExcep.cpp.o
+.PHONY : PrecondViolatedExcep.cpp.o
+
+PrecondViolatedExcep.i: PrecondViolatedExcep.cpp.i
+
+.PHONY : PrecondViolatedExcep.i
+
+# target to preprocess a source file
+PrecondViolatedExcep.cpp.i:
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/PrecondViolatedExcep.cpp.i
+.PHONY : PrecondViolatedExcep.cpp.i
+
+PrecondViolatedExcep.s: PrecondViolatedExcep.cpp.s
+
+.PHONY : PrecondViolatedExcep.s
+
+# target to generate assembly for a file
+PrecondViolatedExcep.cpp.s:
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/PrecondViolatedExcep.cpp.s
+.PHONY : PrecondViolatedExcep.cpp.s
 
 Simulation.o: Simulation.cpp.o
 
@@ -183,7 +210,7 @@ Simulation.o: Simulation.cpp.o
 
 # target to build an object file
 Simulation.cpp.o:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Simulation.cpp.o
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Simulation.cpp.o
 .PHONY : Simulation.cpp.o
 
 Simulation.i: Simulation.cpp.i
@@ -192,7 +219,7 @@ Simulation.i: Simulation.cpp.i
 
 # target to preprocess a source file
 Simulation.cpp.i:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Simulation.cpp.i
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Simulation.cpp.i
 .PHONY : Simulation.cpp.i
 
 Simulation.s: Simulation.cpp.s
@@ -201,7 +228,7 @@ Simulation.s: Simulation.cpp.s
 
 # target to generate assembly for a file
 Simulation.cpp.s:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Simulation.cpp.s
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Simulation.cpp.s
 .PHONY : Simulation.cpp.s
 
 Statistics.o: Statistics.cpp.o
@@ -210,7 +237,7 @@ Statistics.o: Statistics.cpp.o
 
 # target to build an object file
 Statistics.cpp.o:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Statistics.cpp.o
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Statistics.cpp.o
 .PHONY : Statistics.cpp.o
 
 Statistics.i: Statistics.cpp.i
@@ -219,7 +246,7 @@ Statistics.i: Statistics.cpp.i
 
 # target to preprocess a source file
 Statistics.cpp.i:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Statistics.cpp.i
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Statistics.cpp.i
 .PHONY : Statistics.cpp.i
 
 Statistics.s: Statistics.cpp.s
@@ -228,7 +255,7 @@ Statistics.s: Statistics.cpp.s
 
 # target to generate assembly for a file
 Statistics.cpp.s:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/Statistics.cpp.s
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/Statistics.cpp.s
 .PHONY : Statistics.cpp.s
 
 project6.o: project6.cpp.o
@@ -237,7 +264,7 @@ project6.o: project6.cpp.o
 
 # target to build an object file
 project6.cpp.o:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/project6.cpp.o
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/project6.cpp.o
 .PHONY : project6.cpp.o
 
 project6.i: project6.cpp.i
@@ -246,7 +273,7 @@ project6.i: project6.cpp.i
 
 # target to preprocess a source file
 project6.cpp.i:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/project6.cpp.i
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/project6.cpp.i
 .PHONY : project6.cpp.i
 
 project6.s: project6.cpp.s
@@ -255,7 +282,7 @@ project6.s: project6.cpp.s
 
 # target to generate assembly for a file
 project6.cpp.s:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/project6.cpp.s
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/project6.cpp.s
 .PHONY : project6.cpp.s
 
 # Help Target
@@ -264,15 +291,18 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... oneteller"
+	@echo "... edit_cache"
+	@echo "... oneTeller"
 	@echo "... Event.o"
 	@echo "... Event.i"
 	@echo "... Event.s"
 	@echo "... EventBuilder.o"
 	@echo "... EventBuilder.i"
 	@echo "... EventBuilder.s"
+	@echo "... PrecondViolatedExcep.o"
+	@echo "... PrecondViolatedExcep.i"
+	@echo "... PrecondViolatedExcep.s"
 	@echo "... Simulation.o"
 	@echo "... Simulation.i"
 	@echo "... Simulation.s"

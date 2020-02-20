@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=c++14   CMakeFiles/proj6.dir/project6.cpp.o CMakeFiles/proj6.dir/Event.cpp.o CMakeFiles/proj6.dir/EventBuilder.cpp.o CMakeFiles/proj6.dir/Statistics.cpp.o CMakeFiles/proj6.dir/Simulation.cpp.o CMakeFiles/proj6.dir/PrecondViolatedExcep.cpp.o  -o proj6 -rdynamic 

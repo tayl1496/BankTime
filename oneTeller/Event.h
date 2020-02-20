@@ -14,9 +14,12 @@ class Event {
   Time time;
   Time duration;
   int number;
-  int teller;
+  int tellerNum = 1;
 
  public:
+
+  Event() = default;
+  ~Event() = default;
   
   void setEventType(const EventType&);
   void setTime(const Time&);
@@ -24,10 +27,10 @@ class Event {
   void setNumber(const int&);
   void setTellerNum(const int&);
   
-  EventType getEventType() const;
+  EventType getType() const;
   Time getTime() const;
   Time getDuration() const;
-  int getCustNumber() const;
+  int getNumber() const;
   int getTellerNum() const;
 
   bool operator> (const Event& rhs) const;
@@ -37,6 +40,6 @@ class Event {
   bool operator==(const Event& rhs) const;
   bool operator!=(const Event& rhs) const;
   
-}
+};
 
 #endif

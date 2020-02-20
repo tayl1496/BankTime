@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/csugrads/tayl1496/cs1521/projects/project6/oneTeller
 CMAKE_BINARY_DIR = /home/csugrads/tayl1496/cs1521/projects/project6/oneTeller/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/oneteller.dir
+# Target rules for target CMakeFiles/oneTeller.dir
 
 # All Build rule for target.
-CMakeFiles/oneteller.dir/all:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/depend
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/csugrads/tayl1496/cs1521/projects/project6/oneTeller/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target oneteller"
-.PHONY : CMakeFiles/oneteller.dir/all
+CMakeFiles/oneTeller.dir/all:
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/depend
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/csugrads/tayl1496/cs1521/projects/project6/oneTeller/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target oneTeller"
+.PHONY : CMakeFiles/oneTeller.dir/all
 
 # Include target in all.
-all: CMakeFiles/oneteller.dir/all
+all: CMakeFiles/oneTeller.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/oneteller.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csugrads/tayl1496/cs1521/projects/project6/oneTeller/build/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/oneteller.dir/all
+CMakeFiles/oneTeller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csugrads/tayl1496/cs1521/projects/project6/oneTeller/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/oneTeller.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/csugrads/tayl1496/cs1521/projects/project6/oneTeller/build/CMakeFiles 0
-.PHONY : CMakeFiles/oneteller.dir/rule
+.PHONY : CMakeFiles/oneTeller.dir/rule
 
 # Convenience name for target.
-oneteller: CMakeFiles/oneteller.dir/rule
+oneTeller: CMakeFiles/oneTeller.dir/rule
 
-.PHONY : oneteller
-
-# clean rule for target.
-CMakeFiles/oneteller.dir/clean:
-	$(MAKE) -f CMakeFiles/oneteller.dir/build.make CMakeFiles/oneteller.dir/clean
-.PHONY : CMakeFiles/oneteller.dir/clean
+.PHONY : oneTeller
 
 # clean rule for target.
-clean: CMakeFiles/oneteller.dir/clean
+CMakeFiles/oneTeller.dir/clean:
+	$(MAKE) -f CMakeFiles/oneTeller.dir/build.make CMakeFiles/oneTeller.dir/clean
+.PHONY : CMakeFiles/oneTeller.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/oneTeller.dir/clean
 
 .PHONY : clean
 

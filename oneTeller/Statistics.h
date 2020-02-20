@@ -1,7 +1,7 @@
 #ifndef STATISTICS_
 #define STATISTICS_
 
-#define TESTING
+//#define TESTING
 
 #include "Event.h"
 #include "LinkedQueue.h"

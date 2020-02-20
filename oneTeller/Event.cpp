@@ -4,11 +4,7 @@
 #include "EventType.h"
 #include "EventBuilder.h"
 
-Event::Event()
-  : time(-1), type(0), duration(0), number(-1), teller(1)
-{ }
-
-void Event::setEventType(const EventType type){
+void Event::setEventType(const EventType& type){
   this->type = type;
 }
 
@@ -28,7 +24,7 @@ void Event::setTellerNum(const int& tellerNum){
   this->tellerNum = tellerNum;
 }
 
-EventType Event::getEventType() const {
+EventType Event::getType() const {
   return type;
 }
 
@@ -40,10 +36,34 @@ Time Event::getDuration() const {
   return duration;
 }
 
-int Event::getCustNumber() const {
+int Event::getNumber() const {
   return number;
 }
 
 int Event::getTellerNum() const {
-  return teller;
+  return tellerNum;
+}
+
+bool Event::operator> (const Event& rhs) const {
+  return time < rhs.time;
+}
+
+bool Event::operator< (const Event& rhs) const {
+  return time < rhs.time;
+}
+
+bool Event::operator<=(const Event& rhs) const {
+  return time <= rhs.time;
+}
+
+bool Event::operator>=(const Event& rhs) const {
+  return time >= rhs.time;
+}
+
+bool Event::operator==(const Event& rhs) const {
+  return time == rhs.time;
+}
+
+bool Event::operator!=(const Event& rhs) const {
+  return time != rhs.time;
 }

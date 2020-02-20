@@ -11,7 +11,7 @@
  *  @author Timothy Henry
  *  @author Steve Holtz
  *
- *  @date 24 Oct 2018
+ *  @date 5 Apr 2016
  *
  *  @version 7.0 */
 
@@ -28,26 +28,26 @@
  *  Specification of a pointer-based ADT queue. */
 template <typename ItemType>
 class LinkedQueue : public QueueInterface<ItemType> {
- private:
-  using NodePtr = std::shared_ptr<Node<ItemType>>;
+private:
+   std::shared_ptr<Node<ItemType>> backPtr;
+   std::shared_ptr<Node<ItemType>> frontPtr;
+   int length;
+public:
+   LinkedQueue();
 
-  NodePtr backPtr;
-  NodePtr frontPtr;
+   LinkedQueue(const LinkedQueue<ItemType>& aQueue);
 
- public:
-  LinkedQueue() = default;
+   virtual ~LinkedQueue() = default;
 
-  LinkedQueue(const LinkedQueue<ItemType>& aQueue);
+   bool isEmpty() const override;
 
-  virtual ~LinkedQueue() = default;
+   bool enqueue(const ItemType& newEntry) override;
 
-  bool isEmpty() const override;
+   bool dequeue() override;
 
-  bool enqueue(const ItemType& newEntry) override;
-
-  bool dequeue() override;
-
-  ItemType peekFront() const override;
+   int getLength() const;
+   
+   ItemType peekFront() const override;
 };
 
 #include "LinkedQueue.cpp"

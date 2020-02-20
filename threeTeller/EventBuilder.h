@@ -13,7 +13,7 @@ public:
    /** Three things must happen to create an EventBuilder:
     *  1) Prompt the user for the name of an input file
     *  2) Attempt to open this file on the 'inputFile' data member
-    *  3) If the file doesn't open, repeat steps 1 and 2 */
+     *  3) If the file doesn't open, repeat steps 1 and 2 */
    EventBuilder();
 
    /** Create and return an event with members:
@@ -26,7 +26,7 @@ public:
     *  then set the return event.type field to EventType::NONE.  This
     *  can then be used to tell when the external file is either empty
     *  or EOF has been reached. */
-   Event createArrivalEvent(int number);
+   Event createArrivalEvent(const int number, const int LineNum);
 
    /** Create and return an event with members:
     *  type == EventType::DEPATURE
@@ -36,7 +36,8 @@ public:
     *  The duration field is unused for departure type events. */
    Event createDepartureEvent(const Time& currentEventTime,
                               const Time& transactionLength,
-                              int number);
+                              const int number,
+			      const int LineNum);
 };
 
 #endif

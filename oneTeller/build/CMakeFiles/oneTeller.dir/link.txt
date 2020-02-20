@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=c++14   CMakeFiles/oneTeller.dir/project6.cpp.o CMakeFiles/oneTeller.dir/Event.cpp.o CMakeFiles/oneTeller.dir/EventBuilder.cpp.o CMakeFiles/oneTeller.dir/Statistics.cpp.o CMakeFiles/oneTeller.dir/Simulation.cpp.o CMakeFiles/oneTeller.dir/PrecondViolatedExcep.cpp.o  -o oneTeller -rdynamic 

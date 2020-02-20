@@ -12,7 +12,7 @@
  *  @author Timothy Henry
  *  @author Steve Holtz
  *
- *  @date 24 Oct 2018
+ *  @date 3 Apr 2016
  *
  *  @version 7.0 */
 
@@ -29,66 +29,62 @@
  *  Specification of a pointer-based ADT sorted list. */
 template <typename ItemType>
 class LinkedSortedList : public SortedListInterface<ItemType> {
- private:
-  using NodePtr = std::shared_ptr<Node<ItemType>>;
+private:
+   std::shared_ptr<Node<ItemType>> headPtr;
 
-  NodePtr headPtr;
+   int itemCount = 0;
 
-  int itemCount = 0;
+   /** Locates the node that is before the node that does or should
+    *  contain the given entry.
+    *
+    * @pre None.
+    *
+    * @post None.
+    *
+    * @param anEntry The entry to find.
+    *
+    * @return Either a pointer to the node before the node that
+    *         contains or should contain the given entry, or nullptr
+    *         if no prior node exists. */
+   auto getNodeBefore(const ItemType& anEntry) const;
 
-  /** Locates the node that is before the node that does or should
-   *  contain the given entry.
-   *
-   * @pre None.
-   *
-   * @post None.
-   *
-   * @param anEntry The entry to find.
-   *
-   * @return Either a pointer to the node before the node that
-   *         contains or should contain the given entry, or nullptr
-   *         if no prior node exists. */
-  auto getNodeBefore(const ItemType& anEntry) const;
+   auto getNodeAt(const int position) const;
 
-  auto getNodeAt(int position) const;
+   /** Copy the chain of nodes pointed to by origChainPtr.
+    *
+    * @pre None.
+    *
+    * @post None.
+    *
+    * @param origChainPtr A pointer to the chain of nodes to copy.
+    *
+    * @return A pointer to a copy of the nodes pointed to by
+    *         origChainPtr. */
+   std::shared_ptr<Node<ItemType>>
+      copyChain(const std::shared_ptr<Node<ItemType>>& origChainPtr);
 
-  /** Copy the chain of nodes pointed to by origChainPtr.
-   *
-   * @pre None.
-   *
-   * @post None.
-   *
-   * @param origChainPtr A pointer to the chain of nodes to copy.
-   *
-   * @return A pointer to a copy of the nodes pointed to by
-   *         origChainPtr.
-   *
-   * @throws std::bad_alloc When memory allocation fails.
-   */
-  NodePtr copyChain(const NodePtr& origChainPtr);
+public:
+   LinkedSortedList() = default;
 
- public:
-  LinkedSortedList() = default;
+   LinkedSortedList(const LinkedSortedList<ItemType>& aList);
 
-  LinkedSortedList(const LinkedSortedList<ItemType>& aList);
+   virtual ~LinkedSortedList() = default;
 
-  virtual ~LinkedSortedList() = default;
+   bool isEmpty() const override;
 
-  bool isEmpty() const override;
+   int getLength() const override;
 
-  int getLength() const override;
+   bool insertSorted(const ItemType& newEntry) override;
 
-  bool insertSorted(const ItemType& newEntry) override;
+   bool removeSorted(const ItemType& anEntry) override;
 
-  bool removeSorted(const ItemType& anEntry) override;
+   bool remove(const int position) override;
 
-  bool remove(int position) override;
+   void clear() override;
 
-  void clear() override;
+   ItemType getEntry(const int position) const override;
 
-  ItemType getEntry(int position) const override;
-
-  int getPosition(const ItemType& newEntry) const override;
+   int getPosition(const ItemType& newEntry) const override;
 };
 
 #include "LinkedSortedList.cpp"

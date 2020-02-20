@@ -1,3 +1,4 @@
+
 /** @file
  *
  *  @course CS1521
@@ -12,7 +13,7 @@
  *  @author Timothy Henry
  *  @author Steve Holtz
  *
- *  @date 24 Oct 2018
+ *  @date 6 Apr 2016
  *
  *  @version 7.0 */
 
@@ -29,24 +30,24 @@
  *  Specification of a sorted list-based ADT priority queue. */
 template <typename ItemType>
 class PriorityQueue : public PriorityQueueInterface<ItemType> {
- private:
-  std::unique_ptr<LinkedSortedList<ItemType>> sListPtr;
+private:
+   std::unique_ptr<LinkedSortedList<ItemType>> sListPtr;
+public:
+   PriorityQueue();
 
- public:
-  PriorityQueue();
+   PriorityQueue(const PriorityQueue<ItemType>& pq);
 
-  PriorityQueue(const PriorityQueue<ItemType>& pq);
+   virtual ~PriorityQueue() = default;
 
-  virtual ~PriorityQueue() = default;
+   bool isEmpty() const override;
 
-  bool isEmpty() const override;
+   bool enqueue(const ItemType& newEntry) override;
 
-  bool enqueue(const ItemType& newEntry) override;
+   bool dequeue() override;
 
-  bool dequeue() override;
+   ItemType peekFront() const override;
 
-  ItemType peekFront() const override;
-};
+ };
 
 #include "PriorityQueue.cpp"
 

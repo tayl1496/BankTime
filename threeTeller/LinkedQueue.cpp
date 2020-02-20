@@ -12,7 +12,7 @@
  *  @author Timothy Henry
  *  @author Steve Holtz
  *
- *  @date 24 Oct 2018
+ *  @date 5 Apr 2016
  *
  *  @version 7.0 */
 
@@ -23,91 +23,99 @@
 #include "PrecondViolatedExcep.h"
 
 template <typename ItemType>
+LinkedQueue<ItemType>::LinkedQueue() : length(0) {}
+
+template <typename ItemType>
+int LinkedQueue<ItemType>::getLength() const{
+  return length;
+}
+
+template <typename ItemType>
 LinkedQueue<ItemType>::LinkedQueue(const LinkedQueue<ItemType>& aQueue) {
 
-  if (aQueue.frontPtr) {
-    auto aQueuePtr(aQueue.frontPtr);
+   if (aQueue.frontPtr != nullptr) {
+      auto aQueuePtr(aQueue.frontPtr);
 
-    try {
-      frontPtr = std::make_shared<Node<ItemType>>(aQueuePtr->getItem() );
+      try {
+         frontPtr = std::make_shared<Node<ItemType>>(aQueuePtr->getItem() );
 
-      backPtr = frontPtr;
+         backPtr = frontPtr;
 
-      aQueuePtr = aQueuePtr->getNext();
+         aQueuePtr = aQueuePtr->getNext();
 
-      while (aQueuePtr) {
-	backPtr->setNext(std::make_shared<Node<ItemType>>(aQueuePtr->getItem()) );
+         while (aQueuePtr != nullptr) {
+            backPtr->setNext(std::make_shared<Node<ItemType>>(aQueuePtr->getItem()) );
 
-	backPtr = backPtr->getNext();
-	aQueuePtr = aQueuePtr->getNext();
+            backPtr = backPtr->getNext();
+            aQueuePtr = aQueuePtr->getNext();
+         }
       }
-    }
-    catch (const std::bad_alloc&) {
-      frontPtr.reset();
-      backPtr.reset();
+      catch (const std::bad_alloc&) {
+         frontPtr.reset();
+         backPtr.reset();
 
-      throw;
-    }
-  }
+         throw;
+      }
+   }
 }
 
 template <typename ItemType>
 bool LinkedQueue<ItemType>::isEmpty() const {
 
-  return !frontPtr;
+   return frontPtr == nullptr;
 }
 
 template <typename ItemType>
 bool LinkedQueue<ItemType>::enqueue(const ItemType& newEntry) {
 
-  bool ableToEnqueue(true);
+   bool ableToEnqueue(true);
 
-  try {
-    auto newNodePtr(std::make_shared<Node<ItemType>>(newEntry) );
+   try {
+      auto newNodePtr(std::make_shared<Node<ItemType>>(newEntry) );
 
-    if (isEmpty() ) {
-      frontPtr = newNodePtr;
-    }
-    else {
-      backPtr->setNext(newNodePtr);
-    }
+      if (isEmpty() ) {
+         frontPtr = newNodePtr;
+      }
+      else {
+         backPtr->setNext(newNodePtr);
+      }
 
-    backPtr = newNodePtr;
-  }
-  catch (const std::bad_alloc&) {
-    ableToEnqueue = false;
-  }
-
-  return ableToEnqueue;
+      backPtr = newNodePtr;
+   }
+   catch (const std::bad_alloc&) {
+      ableToEnqueue = false;
+   }
+   ++length;
+   return ableToEnqueue;
 }
 
 template <typename ItemType>
 bool LinkedQueue<ItemType>::dequeue() {
 
-  bool ableToDequeue(!isEmpty() );
+   bool ableToDequeue(!isEmpty() );
 
-  if (ableToDequeue) {
-    if (frontPtr == backPtr) {
-      frontPtr.reset();
-      backPtr.reset();
-    }
-    else {
-      frontPtr = frontPtr->getNext();
-    }
-  }
-
-  return ableToDequeue;
+   if (ableToDequeue) {
+      if (frontPtr == backPtr) {
+         frontPtr.reset();
+         backPtr.reset();
+      }
+      else {
+         frontPtr = frontPtr->getNext();
+      }
+   }
+   --length;
+   return ableToDequeue;
 }
 
 template <typename ItemType>
 ItemType LinkedQueue<ItemType>::peekFront() const {
 
-  if (isEmpty() ) {
-    std::string message("LinkedQueue::peekFront() called ");
-    message += "on an empty queue.";
+   if (isEmpty() ) {
+      std::string message("LinkedQueue::peekFront() called ");
+      message += "on an empty queue.";
 
-    throw PrecondViolatedExcep(message);
-  }
+      throw PrecondViolatedExcep(message);
+   }
 
-  return frontPtr->getItem();
+   return frontPtr->getItem();
 }

@@ -41,5 +41,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/oneteller.dir/DependInfo.cmake"
+  "CMakeFiles/oneTeller.dir/DependInfo.cmake"
   )
